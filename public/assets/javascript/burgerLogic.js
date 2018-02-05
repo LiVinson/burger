@@ -16,7 +16,7 @@ $(function () {
         }).then(
             function () {
                 console.log("Added a new burger");
-                location.reload();
+                location.reload(); //Reload home page to have new burger appear
             })
     });
 
