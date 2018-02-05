@@ -24,17 +24,18 @@ router.get("/", function (req, res) {
 
 //Post, New Burger, burgerInfo
 //Called when user enters a burger name and clicks submit 
-router.post("/api/newBurger", function(req, res) {
+router.post("/api/newBurger", function (req, res) {
     console.log("Post! New Burger!");
+    console.log(req.body);
 
-    burger.insertBurger(){
+    //Call inserBurer method, sending table columns names, values to insert into table, and function that takes in result argument, and sends insertId property as POST response
+    burger.insertBurger(["burger_name", "devoured"], [req.body.name, req.body.devoured], function (result) {
+      
+        res.json({id: result.insertId})
 
-
-
-    }
-
-
+    })
 })
 
 
 //Patch, BurgerID
+router.patch("/api/update")
