@@ -23,7 +23,18 @@ router.get("/", function (req, res) {
 
 
 //Post, New Burger, burgerInfo
+//Called when user enters a burger name and clicks submit 
+router.post("/api/newBurger", function(req, res) {
+    console.log("Post! New Burger!");
 
+    burger.insertBurger(){
+
+
+
+    }
+
+
+})
 
 
 //Patch, BurgerID

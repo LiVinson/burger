@@ -13,7 +13,9 @@ var orm = {
             cb(result);
         })
     },
-    insertOne: function() {
+    insertOne: function(table, colName, value, cb) {
+
+        var queryString = `INSERT INTO ${table} (burger_name,devoured) VALUES (${burgName}, ${false})`
 
     },
     updateOne: function() {
