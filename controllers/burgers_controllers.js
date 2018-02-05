@@ -37,5 +37,18 @@ router.post("/api/newBurger", function (req, res) {
 })
 
 
-//Patch, BurgerID
-router.patch("/api/update")
+//Called when user clicks a "Devour It" button, updates devoured to true
+router.patch("/api/update", function (req, res) {
+    console.log("Burger was Devoured!");
+    //condition will be inserted into query after WHERE
+    var condition = `id = ${req.params.burgerID}`;
+
+    burger.updateBurger("devoured", true, condition, function(result) {
+        if (result.changedRows == 0) {
+            return res.status(404).end();
+        } else {
+        res.status(200).end();
+      }
+    });
+
+})

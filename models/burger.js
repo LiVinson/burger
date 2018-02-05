@@ -8,14 +8,16 @@ var burger = {
         })
     },
 
-    insertBurger: function(cols, vals, cb) {
+    insertBurger: function(cols, vals, call) {
         orm.insertOne("burgers", cols, vals, function(res) {
-            cb(res);
+            call(res);
         });
     },
 
-    updateBurger: function() {
-
+    updateBurger: function(col, val, condition, call) {
+        orm.updateOne("burgers", col, val, condition, function(res) {
+            call(res);
+        } )
     }
 
 
