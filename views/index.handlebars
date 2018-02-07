@@ -1,0 +1,33 @@
+<h3>Welcome to</h3>
+<h1>Good Burger</h1>
+<h3>Home of the good burger!</h3>
+
+<h2>May I Take Your Order?</h2>
+
+<form>
+    <div class="form-group">
+        <label for ="burgerInput">Burger Name:</label>
+        <input type="text" id="burgerInput">
+    </div>
+
+    <button type-"submit">Order Burger</button>
+</form>
+
+<h2>Order Up!</h2>
+<ul class="eatenList">
+    {{#each burgers}}
+        {{#unless devoured}}
+            {{> burgers/burger-list devoured=false}}
+        {{/unless}}
+    {{/each}}
+</ul>
+
+<h2>Eaten Burgers!</h2>
+
+<ul class="orderedList">
+    {{#each burgers}}
+        {{#if devoured}}
+            {{> burgers/burger-list devoured=true}}
+        {{/if}}
+    {{/each}}
+</ul>
