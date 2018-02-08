@@ -1,33 +1,37 @@
-<h3>Welcome to</h3>
-<h1>Good Burger</h1>
-<h3>Home of the good burger!</h3>
+<div class="header">
+    <h2 class="welcome">Welcome to</h2>
+    <div class="logoDiv">
+        <img class="logoImg" src="/assets/images/good_burger_logo.png" alt="good burger logo">
 
-<h2>May I Take Your Order?</h2>
+    </div>
+    <h2 class="home">Home of the <span class="gb_tagline">Good Burger</span>!</h2>
+</div>
 
-<form>
-    <div class="form-group">
-        <label for ="newBurger">Burger Name:</label>
-        <input type="text" id="newBurger">
+
+<div class="mainDiv">
+
+    <div class="left-list">
+        <h3>Order Up!</h3>
+            {{#each burgers}} {{#unless devoured}} {{> burgers/burger-list devoured=false}} {{/unless}} {{/each}}
     </div>
 
-    <button id="submitBtn" type="submit">Order Burger</button>
-</form>
+    <div class="formDiv">
+                    <h2 class="takeOrder">May I Take Your Order?</h2>
+        <form>
+            <div class="form-group">
+                <label for="newBurger">Burger Name:</label>
+                <input type="text" id="newBurger">
+            </div>
 
-<h2>Order Up!</h2>
-<ul class="eatenList">
-    {{#each burgers}}
-        {{#unless devoured}}
-            {{> burgers/burger-list devoured=false}}
-        {{/unless}}
-    {{/each}}
-</ul>
+            <button id="submitBtn" type="submit">Order Burger</button>
+        </form>
+    </div>
 
-<h2>Eaten Burgers!</h2>
+    <div class="right-list">
+        <h3>Eaten Burgers!</h3>
+ 
+            {{#each burgers}} {{#if devoured}} {{> burgers/burger-list devoured=true}} {{/if}} {{/each}}
 
-<ul class="orderedList">
-    {{#each burgers}}
-        {{#if devoured}}
-            {{> burgers/burger-list devoured=true}}
-        {{/if}}
-    {{/each}}
-</ul>
+    </div>
+</div>
+
