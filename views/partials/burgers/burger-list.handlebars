@@ -1,7 +1,8 @@
-<p class="list-items">
-    {{id}}. {{burger_name}}
-
+<div class = "listDiv">
+    <p class="list-items">
+        {{id}}. {{burger_name}}
+    </p>
     {{#unless devoured}}
-        <button class="devourBtn" data-id="{{id}}">Devour!</button>
-{{/unless}}
-</p>
+    <button class="devourBtn" data-id="{{id}}">Devour!</button>
+    {{/unless}}
+</div>
