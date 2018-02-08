@@ -1,0 +1,125 @@
+/*--------General Formatting -----------------------------*/
+
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, sans-serif
+}
+
+body {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-color: darkturquoise;
+}
+
+.container {
+    border-left: solid 3px black;
+    border-right: solid 3px black;
+    margin: auto;
+    width: 80%;
+    background-color: oldlace;
+}
+
+/*--------Logo -----------------------------*/
+.header {
+    margin-bottom: -20px;
+    margin-top: -35px;
+}
+.logoDiv {
+    margin: auto;
+    width: 70%;
+    height: fit-content;
+    margin-bottom: -20px
+}
+
+.logoImg {
+    width: inherit;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    bottom: 50px;
+}
+
+.welcome {
+    width: fit-content;
+    padding: 15px 10px 20px 10px;
+    position: relative;
+    left: 150px;
+    top: 20px;
+    font-size: 60px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.home {
+    width: fit-content;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: relative;
+    left: 400px;
+    bottom: 60px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 42px;
+    font-family: 'Shadows Into Light', cursive;
+}
+
+.gb_tagline{
+    font-style:bold;
+    color:darkturquoise;
+    font-family:inherit;
+}
+
+.takeOrder{
+    text-align:center;
+
+
+}
+/*--------Form and List Container -----------------------------*/
+
+.mainDiv {
+    display: flex;
+    justify-content: space-around;
+}
+
+/*--------Form Container -----------------------------*/
+
+form {
+    margin: auto;
+}
+
+.formDiv {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+#submitBtn{
+    background-color:darkturquoise;
+    padding: 8px 12px 8px 12px;
+    border:oldlace;
+    color: oldlace;
+
+}
+/*--------Lists -----------------------------*/
+
+.left-list,
+.right-list{
+    margin-top:15px;
+}
+.list-items{
+    padding-left:2px;
+
+}
+.devourBtn{
+    background-color:#F0F0F0;
+    padding:4px 5px 3px 5px;
+    font-style:bold;
+    border: solid 1px black;
+}
+
+.devourBtn:hover{
+    opacity:70;
+}
