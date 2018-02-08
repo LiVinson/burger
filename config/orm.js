@@ -8,7 +8,7 @@ var getPlaceholders = function (itemNum) {
         arr.push("?")
     }
     return arr.toString()
-}
+};
 
 //Takes in object with property names = column name to be updated and keys = new table row value
 var objToSql = function (obj) {
@@ -31,24 +31,28 @@ var objToSql = function (obj) {
 var orm = {
     //Called from ..\models\burger.js\burger.allBurgers()
     selectAll: function (table, cb) {
-        var queryString = `SELECT * FROM ${table};`;
+        
+        var queryString = `SELECT * FROM ${table}`;
         connection.query(queryString, function (err, result) {
-            if (err) {
-                throw err;
-            }
+            if (err) throw err;
+            // console.log(result);
             cb(result);
         })
     },
-    insertOne: function (table, colNames, values, cb) {
+    insertOne: function (table, colName, value, cb) {
         //Builds queryString with table name, colNames array converted to string, and 1 question mark for each item in values array
-        var queryString = `INSERT INTO ${table} (${colNames.toString()}) VALUES (${getPlaceholders(values.length)}) `;
+        console.log("orm.insertOne Method");
+
+    
+       console.log(`Table: ${table}, Column Name: ${colName}Value: ${value}`);
+        var queryString = `INSERT INTO ${table} (${colName}) VALUES ('${value}')`;
         console.log(queryString);
 
-        connection.query(queryString, values, function (err, result) {
+        connection.query(queryString, value, function (err, result) {
             if (err) {
                 throw err;
             };
-            console.log(result);
+            console.log(result.insertId);
             cb(result);
         })
 

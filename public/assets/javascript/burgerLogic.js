@@ -6,8 +6,9 @@ $(function () {
 
         var newBurger = {
             name: $("#newBurger").val().trim(),
-            devoured: false
         };
+
+        // console.log(`New button before post: ${newBurger}`);
 
         //Send POST request with newBurger object
         $.ajax("/api/newBurger", {
@@ -23,13 +24,15 @@ $(function () {
 
     //When user clicks devour button,
     //Send a patch request with burgerID to api/update
-    $(".devour").on("click", function (event) {
+    $(".devourBtn").on("click", function (event) {
+        console.log("devour clicked!");
         event.preventDefault(); //confirm if this is needed...
         var burgerID = $(this).data("id");
+        console.log(`burger ID: ${burgerID}`);  
 
-        $.ajax("/api/update" + burgerID, {
-            type: "PATCH",
-            value: true
+        $.ajax("/api/update/" + burgerID, {
+            type: "PATCH"
+ 
         }).then(
             function () {
                 console.log("Inside then after patch request");
