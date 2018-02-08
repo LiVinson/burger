@@ -8,8 +8,6 @@ $(function () {
             name: $("#newBurger").val().trim(),
         };
 
-        // console.log(`New button before post: ${newBurger}`);
-
         //Send POST request with newBurger object
         $.ajax("/api/newBurger", {
             type: "POST",
@@ -21,18 +19,17 @@ $(function () {
             })
     });
 
-
     //When user clicks devour button,
-    //Send a patch request with burgerID to api/update
+    //Send a patch request with burgerID to endpoint api/update
     $(".devourBtn").on("click", function (event) {
         console.log("devour clicked!");
-        event.preventDefault(); //confirm if this is needed...
+        event.preventDefault();
         var burgerID = $(this).data("id");
-        console.log(`burger ID: ${burgerID}`);  
+        console.log(`burger ID: ${burgerID}`);
 
         $.ajax("/api/update/" + burgerID, {
             type: "PATCH"
- 
+
         }).then(
             function () {
                 console.log("Inside then after patch request");

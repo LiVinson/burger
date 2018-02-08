@@ -14,9 +14,11 @@ body {
 .container {
     border-left: solid 3px black;
     border-right: solid 3px black;
+    border-bottom:solid 3px black;
     margin: auto;
-    width: 80%;
+    width: 90%;
     background-color: oldlace;
+    margin-bottom:10px;
 }
 
 /*--------Logo -----------------------------*/
@@ -70,19 +72,19 @@ body {
     font-family:inherit;
 }
 
-.takeOrder{
-    text-align:center;
-
-
-}
 /*--------Form and List Container -----------------------------*/
 
 .mainDiv {
     display: flex;
     justify-content: space-around;
+    padding-bottom:20px;
 }
 
 /*--------Form Container -----------------------------*/
+
+.takeOrder{
+    text-align:center;
+}
 
 form {
     margin: auto;
@@ -90,36 +92,72 @@ form {
 
 .formDiv {
     text-align: center;
+    width:33%;
 }
 
 .form-group {
     margin-bottom: 10px;
 }
 
+label{
+    font-size:20px;
+}
+
 #submitBtn{
     background-color:darkturquoise;
     padding: 8px 12px 8px 12px;
-    border:oldlace;
+    border: solid 1px #F0F0F0;
     color: oldlace;
+    font-size:18px;
 
+}
+
+#submitBtn:hover{
+    background-color:#00b0b3
 }
 /*--------Lists -----------------------------*/
 
-.left-list,
-.right-list{
-    margin-top:15px;
-}
-.list-items{
-    padding-left:2px;
+.listDiv{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:5px;
+    padding-right:5px;
+    padding-left:5px;
 
 }
+
+
+.left-list{
+    width:35%;
+    border-right: groove black 2px;
+    text-align: center;
+    margin-top:15px;
+}
+
+.right-list{
+    margin-top:15px;
+    text-align: center;
+    border-left:groove black 2px;
+    padding:3px;
+}
+
+
+.list-items{
+    margin-top:8px;
+    margin-bottom:8px;
+}
+
+
 .devourBtn{
     background-color:#F0F0F0;
-    padding:4px 5px 3px 5px;
+    padding:2px 5px 3px 5px;
     font-style:bold;
     border: solid 1px black;
+    margin-right:4px;
+ 
 }
 
 .devourBtn:hover{
-    opacity:70;
+    background-color:#E8E8E8;
 }
