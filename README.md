@@ -1,7 +1,7 @@
 # Burger
 A full stack single page application built with MySQL, Node, Express, Handlebars and a homemade ORM. Allows users to add new burgers, adding them to the Order Up List, and "devour" burgers with a click, adding them to the Eaten list.
 
-Burger is deployed at Heroku: [Good Burger]()
+Burger is deployed at Heroku: [Good Burger](https://blooming-thicket-67396.herokuapp.com/)
 
 ## Design Details
 
